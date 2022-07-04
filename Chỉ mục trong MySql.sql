@@ -10,3 +10,22 @@ WHERE contactFirstName = 'Jean'
 OR contactFirstName = 'King';
 
 ALTER TABLE customers DROP INDEX idx_fullname;
+
+-- Tạo Mysql Stored Procedure
+DELIMITER //
+DROP PROCEDURE IF EXISTS findAllCustomers;
+Create procedure findAllCustomers()
+BEGIN
+SELECT * FROM customers;
+END  
+// DELIMITER ;
+
+CALL findAllCustomers();
+
+DELIMITER //
+DROP procedure IF EXISTS findAllCustomers //
+CREATE procedure findAllCustomers()
+BEGIN
+SELECT * FROM customers WHERE customerNumber = 175;
+END // 
+DELIMITER ; 
