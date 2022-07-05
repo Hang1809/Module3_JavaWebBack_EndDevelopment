@@ -41,17 +41,16 @@ CALL findAllProducts();
 DELIMITER //
 DROP PROCEDURE IF EXISTS AddNewProduct;
 CREATE procedure AddNewProduct(
-id int, productCode varchar(15), productName varchar(45),
-productPrice double ,productAmount int,
- productDescription varchar(225), productStatus varchar(45))
+IN pid int,IN pCode varchar(15), IN pName varchar(45),
+IN pPrice double ,IN pAmount int,
+IN pDescription varchar(225),IN pStatus varchar(45))
 BEGIN
-SELECT * FROM product;
 INSERT INTO product (id,productCode, productName,productPrice ,productAmount, productDescription , productStatus)
 VALUES 
-(4,'PR_04','JordanGirl', 50, 10,'Jordan limited version','NEW ARRIVAL');
+(pid,pCode,pName,pPrice,pAmount,pDescription,pStatus);
 END //
 DELIMITER ;
-CALL addNewProduct(4,'PR_04','JordanGirl', 50, 10,'Jordan limited version','NEW ARRIVAL');
+CALL addNewProduct(7,'PR_07','JordanGirl', 70, 3,'Jordan limited version','NEW ARRIVAL');
 CALL findAllProducts();
 
 -- store procedure xoá sản phẩm theo id:
