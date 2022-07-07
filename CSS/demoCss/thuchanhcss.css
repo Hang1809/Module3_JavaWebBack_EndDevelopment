@@ -1,0 +1,15 @@
+h1 {
+    color: green;
+    font-family: Tahoma;
+    font-size: 200%;
+
+}
+
+p {
+    color: blue;
+    font-family: Arial;
+    font-size: 120%;
+    border: 1px solid grey;
+    padding: 10px;
+}
+

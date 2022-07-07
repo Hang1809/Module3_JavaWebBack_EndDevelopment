@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body {
+            background-color: bisque;
+        }
+
+        @keyframes doimau {
+            30% {
+        
+                background-color: white;
+            }
+            30% {
+                background-color: blue;
+            }
+            70% {
+                background-color: green;
+            }
+            
+        }
+        h1 {
+            border: 5px solid red;
+            width: 120px;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 5px 5px blue;
+            border-radius: 10px;
+            margin: 5px;
+            animation: doimau 2s infinite;
+
+        }
+
+        p,
+        h1 {
+            color: rebeccapurple;
+        }
+
+        /* div p {
+            color: rebeccapurple;
+        } */
+        /* div > p {
+            color: blue;
+        } */
+
+        /* lay anh em phia sau div */
+        /* div + p {
+            color: blue
+        } */
+
+        /* lay ae phia sau div */
+        /* div ~ p {
+            color: brown;
+        } */
+        p.test {
+            color: red;
+        }
+
+        ul {
+            color: green;
+        }
+
+        section>.test {
+            color: goldenrod
+        }
+
+        input[type=button] {
+            background-color: rebeccapurple;
+            color: whitesmoke;
+        }
+
+        .chan {
+            color: blue;
+            padding: 15px 15px;
+            text-align: center;
+            width: 400px;
+            background-color: brown;
+            /* border-style: solid;
+            border-bottom-style: dashed;
+            border-color: white;
+            border-width: 20px; */
+            border: 20px solid white;
+            border-bottom-style: dashed;
+            border-radius: 10px;
+            box-shadow: 10px 10px burlywood;
+            margin: 0 auto;
+            /* margin-left: auto; */
+        }
+
+        table.mytable {
+            background-color: orange;
+            margin: auto;
+            margin-top: 30px;
+            text-align: center;
+            border-collapse: collapse;
+            border: 20px solid white;
+            color: aliceblue;
+        }
+
+        table.mytable tr:nth-child(even) {
+            background-color: yellow;
+            color: brown;
+        }
+
+        table.mytable tr:nth-child(odd) {
+            background-color: peru;
+            color: blanchedalmond;
+        }
+
+        table.mytable tr:nth-child(1) {
+            text-align: center;
+            font-weight: bold;
+            background-color: brown;
+
+        }
+
+        table.mytable tr:hover {
+            background-color: red;
+            color: white;
+        }
+
+        div.text {
+            margin-top: 50px;
+            width: 300px;
+            height: 100px;
+            background-color: aqua;
+            color: lightcoral;
+            overflow: auto;
+        }
+
+        div.float {
+            margin-top: 50px;
+            background-color: yellowgreen;
+            overflow: auto;
+        }
+        div.float > div {
+            float: right;
+            overflow: hidden;
+        }
+        div.cs :hover {
+            transform: scale(1.2);
+        }
+
+        div.go {
+            background-color: rgb(0, 255, 234);
+            /* padding: 5px;
+            width: 80px; */
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        div.go>a {
+            color: burlywood;
+            display: block;
+            padding: 20px;
+            width: 100px;
+
+        }
+
+        div.t>div {
+            margin-top: 20px;
+            width: 23%;
+            height: 120px;
+            border: 2px dashed rebeccapurple;
+            /* display: inline-block; */
+        }
+
+        div.t {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            height: 300px;
+            justify-content: space-evenly;
+            background: darksalmon;
+            align-content: baseline;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1 class="test">C0322G1</h1>
+        <p>Phuoc van dang hat</p>
+        <p class="test">Tri Dao nghe nhac</p>
+        <ul>
+            <li>Nhac HQ</li>
+            <li>Nhac remix</li>
+        </ul>
+        </div >
+        <p>Bao Xinh sleep</p>
+        <p class="test">Minh cuoi</p>
+        <input type="button" value="BUTTON">
+        <p class="chan">"Lập trình máy tính hay lập chương trình máy tính thường gọi tắt là lập trình (tiếng Anh:
+            Computer programming, thường gọi tắt là programming) là việc lập ra chương trình làm việc cho máy có bộ xử
+            lý, nói riêng là máy tính, để thực thi nhiệm vụ xử lý thông tin nào đó.
+            Chương trình này gồm dãy các chỉ thị (hay lệnh) hợp lý để máy thực hiện theo trình tự thời gian [1].
+            Lập trình phải thực hiện cho tất cả các hệ thống xử lý thông tin, từ các dàn máy điện toán lớn, máy tính cá
+            nhân (PC), đến các chip điều khiển lập trình được trong các khối điều khiển thiết bị các loại như trong máy
+            đo đạc phân tích, vũ khí có điều khiển, máy giặt, lò vi sóng,...và trong các thiết bị ngoại vi của máy tính
+            như chip điều khiển ở card màn hình, cổng giao tiếp,..."
+        </p>
+        <div class="text">
+
+
+            <p>Công nghệ Servlet được sử dụng để tạo ra ứng dụng web (nằm ở phía máy chủ và tạo ra trang web động).
+                Sử dụng Servlet, bạn có thể thu thập thông tin đầu vào từ người dùng thông qua các trang web, hiển thị
+                các bản ghi từ một cơ sở dữ liệu hoặc một nguồn khác.
+            </p>
+
+        </div>
+
+        <div class="float">
+            <div class="cs"><img src="casau.jpg" width="130px" /></div>
+            <p>Công nghệ Servlet được sử dụng để tạo ra ứng dụng web (nằm ở phía máy chủ và tạo ra trang web động).
+                Sử dụng Servlet, bạn có thể thu thập thông tin đầu vào từ người dùng thông qua các trang web, hiển thị
+                các bản ghi từ một cơ sở dữ liệu hoặc một nguồn khác.
+            </p>
+            <h2>Study Servlet</h2>
+        </div>
+
+        <div class="go">
+            <a href="https://james.codegym.vn/course/view.php?id=545">LEARNING WITH CODEGYM</a>
+        </div>
+        <table class="mytable" border="1" width="80%">
+            <tr>
+                <td>Name</td>
+                <td>phone</td>
+                <td>address</td>
+                <td>class</td>
+            </tr>
+            <tr>
+                <td>Trung</td>
+                <td>0981234567</td>
+                <td>QuangBinh</td>
+                <td>C0322G1</td>
+            </tr>
+            <tr>
+                <td>Triet</td>
+                <td>0986634567</td>
+                <td>Hue</td>
+                <td>C0222H1</td>
+            </tr>
+            <tr>
+                <td>Ngan</td>
+                <td>0988234567</td>
+                <td>Hue</td>
+                <td>C0322G1</td>
+            </tr>
+            <tr>
+                <td>Tung</td>
+                <td>0988234588</td>
+                <td>Hue</td>
+                <td>C0322G1</td>
+            </tr>
+        </table>
+
+        <div class="t">
+            <div>ABC</div>
+            <div>ABC</div>
+            <div>ABC</div>
+            <div>ABC</div>
+            <div>ABC</div>
+            <div>ABC</div>
+        </div>
+
+    </section>
+</body>
+
+</html>
