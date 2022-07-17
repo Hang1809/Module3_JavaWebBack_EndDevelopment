@@ -197,6 +197,64 @@ public class UserDAO implements IUserDAO {
         }
     }
 
+    @Override
+    public void addUserTransaction(User user, int[] permision) {
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+        PreparedStatement pstmtAssignment = null;
+        ResultSet rs = null;
+        try {
+            conn = getConnection();
+            conn.setAutoCommit(false);
+
+            //Insert User
+            preparedStatement = conn.prepareStatement(INSERT_USERS_SQL,Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1,user.getName());
+            preparedStatement.setString(2,user.getEmail());
+            preparedStatement.setInt(3, user.getIdCountry());
+            int rowAffected = preparedStatement.executeUpdate();
+
+            //get user id
+            rs = preparedStatement.getGeneratedKeys();
+            int userId = 0;
+            if (rs.next())
+                userId = rs.getInt(1);
+
+            if (rowAffected == 1){
+                String sqlPivot =  "INSERT INTO user_permision(user_id,permision_id) "
+                        + "VALUES(?,?)";
+                pstmtAssignment = conn.prepareStatement(sqlPivot);
+                for (int permisionId : permision){
+                    pstmtAssignment.setInt(1,userId);
+                    pstmtAssignment.setInt(2,permisionId);
+                    pstmtAssignment.executeUpdate();
+                }
+                conn.commit();
+            }else {
+                conn.rollback();
+            }
+        } catch (SQLException ex) {
+            try {
+                if (conn != null)
+                    conn.rollback();
+
+            }catch (SQLException e){
+                System.out.println(e.getMessage());
+            }
+            System.out.println(ex.getMessage());
+        } finally {
+            try{
+                if (rs != null) rs.close();
+                if (preparedStatement != null) preparedStatement.close();
+                if (pstmtAssignment != null) pstmtAssignment.close();
+                if (conn !=null) conn.close();
+
+            }catch (SQLException e){
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
             if (e instanceof SQLException) {
